@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DynamodnDemoApplication {
+public class DynamodbDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DynamodnDemoApplication.class, args);
+		SpringApplication.run(DynamodbDemoApplication.class, args);
 	}
 
 }
