@@ -25,7 +25,7 @@ public class HotelController {
 	@Autowired
 	private HotelRepository hotelRepository;
 	
-	@GetMapping("/create")
+	@PostMapping("/create")
 	public ResponseEntity<String> createTable() {
 		hotelRepository.createTable();
 		return new ResponseEntity<String>("table created", HttpStatus.CREATED);
@@ -51,9 +51,9 @@ public class HotelController {
 	
 	
 	@PostMapping
-	public ResponseEntity<String> addTable(@RequestBody Hotel hotel) {
-		hotelRepository.addHotel(hotel);
-		return new ResponseEntity<String>("New hotel has been added", HttpStatus.CREATED);
+	public ResponseEntity<Hotel> addTable(@RequestBody Hotel hotel) {
+		Hotel newHotel = hotelRepository.addHotel(hotel);
+		return new ResponseEntity<Hotel>(newHotel, HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/{id}")

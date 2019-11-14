@@ -10,7 +10,7 @@ public interface CustomHotelRepository {
 	void createTable();
 	void deleteTable();
 	void loadData() throws IOException;
-	void addHotel(Hotel hotel);
+	Hotel addHotel(Hotel hotel);
 	Hotel getHotel(String id);
 	PaginatedScanList<Hotel> fetchAll();
 

@@ -1,7 +1,6 @@
 package com.tushar.dynamodb.repository;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -58,9 +57,10 @@ public class CustomHotelRepositoryImpl implements CustomHotelRepository {
 	}
 	
 	@Override
-	public void addHotel(Hotel hotel) {
+	public Hotel addHotel(Hotel hotel) {
 		mapper.save(hotel);
 		log.info("New hotel has been added successfully");
+		return hotel;
 	}
 	
 	@Override
